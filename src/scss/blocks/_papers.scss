@@ -1,0 +1,316 @@
+.papers {
+    padding-top: 115px;
+    padding-bottom: 100px;
+
+    &__header {
+        p {
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 30px;
+            color: #FFFFFF;
+        }
+    }
+
+    &__logo {
+        width: 46px;
+        height: 46px;
+        background-image: url('../../img/vc-ru-logo.png');
+    }
+
+    &__slider {
+        padding-top: 61px;
+        display: flex;
+
+
+        &-item {
+            width: 364px;
+            height: 460px;
+            background: #2A292C;
+            display: flex;
+
+
+            &-bottom {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+            }
+
+            &-body {
+                padding: 36px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            &-typeData {
+                list-style-type: none;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        &-item:hover {
+            background: #F5F5F5;
+            transition: .5s;
+
+            .papers__read {
+                a {
+                    color: #151515;
+                }
+            }
+
+            .papers__data {
+                color: #151515;
+            }
+
+            .papers__short-description {
+                color: #151515;
+            }
+
+            .papers__logo {
+                background-image: url('../../img/vc-ru-logo-black.png');
+            }
+        }
+    }
+
+    &__type {
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 30px;
+        color: #FF174E;
+
+    }
+
+    &__type::before {
+        content: "▪";
+        padding-right: 10px;
+    }
+
+    &__data {
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 30px;
+        text-align: right;
+        color: #FFFFFF;
+    }
+
+    &__short-description {
+        max-width: 275px;
+        margin-top: 22px;
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        color: #FFFFFF;
+    }
+
+    &__read {
+        list-style-type: none;
+
+        a {
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 30px;
+            text-decoration-line: underline;
+            color: #FFFFFF;
+        }
+    }
+
+    &__read::before {
+        content: "▪";
+        width: 5px;
+        height: 5px;
+        color: #C4C4C4;
+        padding-right: 10px;
+    }
+
+    .slick-next {
+        top: -62px;
+        right: 188px;
+    }
+
+    .slick-prev {
+        top: -62px;
+        left: 843px;
+    }
+
+    .slick-dots {
+        left: 843px;
+        top: -16px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .papers {
+        &__slider {
+            &-item {
+                width: 310px;
+                height: 480px;
+            }
+        }
+
+        .slick-next {
+            top: -62px;
+            right: 126px;
+        }
+
+        .slick-prev {
+            top: -62px;
+            left: 727px;
+        }
+
+        .slick-dots {
+            left: 732px;
+            top: -16px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .papers {
+        &__slider {
+            &-item {
+                width: 345px;
+                height: 420px;
+            }
+        }
+
+        .slick-next {
+            top: -62px;
+            right: 49px;
+        }
+
+        .slick-prev {
+            top: -62px;
+            left: 554px;
+        }
+
+        .slick-dots {
+            left: 557px;
+            top: -16px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .papers {
+        &__slider {
+            &-item {
+                height: 470px;
+            }
+        }
+
+        .slick-next {
+            top: 586px;
+            right: 216px;
+        }
+
+        .slick-prev {
+            top: 586px;
+            left: 215px;
+        }
+
+        .slick-dots {
+            left: 270px;
+            top: 632px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .papers {
+        .slick-next {
+            top: 420px;
+            right: 33%;
+        }
+
+        .slick-prev {
+            top: 420px;
+            left: 33%;
+        }
+
+        .slick-dots {
+            left: 50%;
+            top: 460px;
+        }
+
+        &__type {
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 24px;
+            align-items: center;
+
+            color: #FF174E;
+        }
+
+        &__data {
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: right;
+            color: #FFFFFF;
+        }
+
+        &__short-description {
+            max-width: 193px;
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+            color: #FFFFFF;
+        }
+
+        &__read {
+            a {
+                font-family: 'Gilroy';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 24px;
+                color: #FFFFFF;
+            }
+        }
+
+        &__header {
+            p {
+
+                padding-top: 12px;
+                font-size: 14px;
+                line-height: 20px;
+                text-align: center;
+            }
+
+            .title {
+                font-size: 18px;
+                line-height: 22px;
+                text-align: center;
+                color: #FFFFFF;
+            }
+        }
+
+        &__slider {
+            &-item {
+                width: 239px;
+                height: 313px;
+
+                &-body {
+                    padding: 23px;
+                }
+            }
+        }
+    }
+}
