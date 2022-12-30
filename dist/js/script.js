@@ -1,13 +1,13 @@
 'use strict';
 
-window.addEventListener('DOMContentLoaded', () => { 
+window.addEventListener('DOMContentLoaded', () => {
 
     const smoothLinks = document.querySelectorAll('a[href^="#"]');
     for (let smoothLink of smoothLinks) {
         smoothLink.addEventListener('click', function (e) {
             e.preventDefault();
             const id = smoothLink.getAttribute('href');
-
+            console.log(`scroll to ${id}`);
             document.querySelector(id).scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
@@ -48,7 +48,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const faqItems = document.querySelectorAll('.faq__item');
 
     faqItems.forEach(item => {
-        item.addEventListener('click', function() {
+        item.addEventListener('click', function () {
             if (this.classList.contains('active')) {
                 this.classList.remove('active');
                 if (this.getAttribute('data-eng') == "1") {
@@ -86,7 +86,7 @@ window.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = "";
         })
     })
-    
+
     // Footer & Form
 
     const choise = document.querySelector('.footer__choise');
@@ -130,7 +130,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function (e) {
         e.preventDefault();
 
         const formData = new FormData(this);
@@ -153,7 +153,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (document.body.getAttribute('data-nav')) {
         const headerNav = document.querySelector('.header__nav');
         const navA = headerNav.querySelectorAll('a');
-    
+
         // navA.forEach((item) => {
         //     item.addEventListener('click', (e) => {
         //         navA.forEach(item => {
@@ -162,43 +162,46 @@ window.addEventListener('DOMContentLoaded', () => {
         //         e.target.classList.add('active');
         //     })
         // })
-    
-    
-            // Создаем новый observer (наблюдатель)
-        let observer = new IntersectionObserver(function (entries) {
+
+
+        // Создаем новый observer (наблюдатель)
+        let observer = new IntersectionObserver(function async(entries) {
             entries.forEach(function (entry) {
-        // // Выводим в консоль сам элемент
-        //         console.log(entry.target);
-        // // Выводим в консоль true (если элемент виден) или false (если нет)
-        //         console.log(entry.isIntersecting);
-                console.log(entry);
+                // // Выводим в консоль сам элемент
+                //         console.log(entry.target);
+                // // Выводим в консоль true (если элемент виден) или false (если нет)
+                //         console.log(entry.isIntersecting);
+     
                 if (entry.isIntersecting) {
                     const index = entry.target.getAttribute('data-active');
                     navA.forEach(item => {
-                            item.classList.remove('active');
-                        });
+                        item.classList.remove('active');
+                    });
+                    console.log(index);
                     navA[index].classList.add('active');
-                        
+
                 }
             });
         });
-    
+
         // Задаем элемент для наблюдения
-    
+
         const helper = document.getElementById('helper');
         const tech = document.getElementById('tech');
         const works = document.getElementById('works');
         const about = document.getElementById('about');
-    
+        const papers = document.getElementById('papers');
+
         // const el = [helper, tech, works, about];
         // console.log(el);
-    
+
         // Прикрепляем его к «наблюдателю»
         observer.observe(helper);
         observer.observe(tech);
         observer.observe(works);
+        observer.observe(papers);
         observer.observe(about);
-    
+
     }
 
 
