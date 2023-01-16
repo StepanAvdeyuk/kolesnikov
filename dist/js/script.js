@@ -163,7 +163,6 @@ window.addEventListener('DOMContentLoaded', () => {
         //     })
         // })
 
-
         // Создаем новый observer (наблюдатель)
         let observer = new IntersectionObserver(function async(entries) {
             entries.forEach(function (entry) {
@@ -171,7 +170,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 //         console.log(entry.target);
                 // // Выводим в консоль true (если элемент виден) или false (если нет)
                 //         console.log(entry.isIntersecting);
-     
+
                 if (entry.isIntersecting) {
                     const index = entry.target.getAttribute('data-active');
                     navA.forEach(item => {
@@ -182,6 +181,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
                 }
             });
+        }, {
+            threshold: [0.1],
         });
 
         // Задаем элемент для наблюдения
@@ -190,7 +191,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const tech = document.getElementById('tech');
         const works = document.getElementById('works');
         const about = document.getElementById('about');
-        const papers = document.getElementById('papers');
+
 
         // const el = [helper, tech, works, about];
         // console.log(el);
@@ -199,7 +200,6 @@ window.addEventListener('DOMContentLoaded', () => {
         observer.observe(helper);
         observer.observe(tech);
         observer.observe(works);
-        observer.observe(papers);
         observer.observe(about);
 
     }

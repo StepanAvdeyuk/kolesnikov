@@ -1,11 +1,17 @@
 .papers {
-    padding-top: 115px;
-    padding-bottom: 100px;
+    .slick-slide {
+        margin: 0 10px;
+     }
+     
+     .slick-list {
+        margin: 0 -10px;
+     }
+
+     padding-top: 115px;
+     padding-bottom: 100px;
 
     &__header {
         p {
-            font-family: 'Gilroy';
-            font-style: normal;
             font-weight: 600;
             font-size: 18px;
             line-height: 30px;
@@ -14,9 +20,15 @@
     }
 
     &__logo {
+        display: flex;
         width: 46px;
         height: 46px;
-        background-image: url('../../img/vc-ru-logo.png');
+        font-size: 27px;
+        font-weight: 600;
+        color: #F5F5F5;
+        justify-content: flex-end;
+        align-items: flex-end;
+        // background-image: url('../../img/vc-ru-logo.png');
     }
 
     &__slider {
@@ -70,29 +82,33 @@
             }
 
             .papers__logo {
-                background-image: url('../../img/vc-ru-logo-black.png');
+                color: black;
+                // background-image: url('../../img/vc-ru-logo-black.png');
             }
         }
     }
 
     &__type {
-        font-family: 'Gilroy';
-        font-style: normal;
+        padding-left: 15px;
+        position: relative;
         font-weight: 600;
         font-size: 18px;
         line-height: 30px;
         color: #FF174E;
 
-    }
-
-    &__type::before {
-        content: "▪";
-        padding-right: 10px;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: $second-color;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0px;
+        }
     }
 
     &__data {
-        font-family: 'Gilroy';
-        font-style: normal;
         font-weight: 500;
         font-size: 18px;
         line-height: 30px;
@@ -103,8 +119,6 @@
     &__short-description {
         max-width: 275px;
         margin-top: 22px;
-        font-family: 'Gilroy';
-        font-style: normal;
         font-weight: 600;
         font-size: 20px;
         line-height: 24px;
@@ -112,25 +126,29 @@
     }
 
     &__read {
+        padding-left: 15px;
         list-style-type: none;
+        position: relative;
 
         a {
-            font-family: 'Gilroy';
-            font-style: normal;
             font-weight: 600;
             font-size: 18px;
-            line-height: 30px;
+            line-height: 36px;
             text-decoration-line: underline;
+            text-underline-offset: 5px;
             color: #FFFFFF;
         }
-    }
 
-    &__read::before {
-        content: "▪";
-        width: 5px;
-        height: 5px;
-        color: #C4C4C4;
-        padding-right: 10px;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #C4C4C4;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0px;
+        }
     }
 
     .slick-next {
@@ -151,8 +169,9 @@
 
 @media (max-width: 1200px) {
     .papers {
+        padding-top: 100px;
         &__slider {
-        
+
             &-item {
                 width: 310px;
                 height: 480px;
@@ -178,6 +197,7 @@
 
 @media (max-width: 992px) {
     .papers {
+        padding-top: 50px;
         &__slider {
             &-item {
                 width: 345px;
@@ -204,6 +224,7 @@
 
 @media (max-width: 768px) {
     .papers {
+        padding-top: 40px;
         &__slider {
             &-item {
                 height: 470px;
@@ -245,8 +266,6 @@
         }
 
         &__type {
-            font-family: 'Gilroy';
-            font-style: normal;
             font-weight: 600;
             font-size: 14px;
             line-height: 24px;
@@ -256,8 +275,6 @@
         }
 
         &__data {
-            font-family: 'Gilroy';
-            font-style: normal;
             font-weight: 500;
             font-size: 14px;
             line-height: 20px;
@@ -267,8 +284,6 @@
 
         &__short-description {
             max-width: 193px;
-            font-family: 'Gilroy';
-            font-style: normal;
             font-weight: 600;
             font-size: 18px;
             line-height: 24px;
@@ -277,29 +292,26 @@
 
         &__read {
             a {
-                font-family: 'Gilroy';
-                font-style: normal;
+                text-decoration-line: underline;
+                text-underline-offset: 5px;
                 font-weight: 600;
                 font-size: 14px;
-                line-height: 24px;
+                line-height: 36px;
                 color: #FFFFFF;
             }
         }
 
         &__header {
-            p {
+            text-align: center;
+            display: block;
 
-                padding-top: 12px;
+            p {
+            
+                padding: 0px 20% 0px 20%;
+                font-weight: 400;
                 font-size: 14px;
                 line-height: 20px;
                 text-align: center;
-            }
-
-            .title {
-                font-size: 18px;
-                line-height: 22px;
-                text-align: center;
-                color: #FFFFFF;
             }
         }
 
